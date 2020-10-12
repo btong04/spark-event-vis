@@ -1,0 +1,49 @@
+Name,criteo-s3,criteo-hdfs
+GPU time,22734796913.0,15650804421.0
+buffer time,9810898543768.0,64700787510634.0
+collect batch time,6344713813023.0,36612649096370.0
+concat batch time,28136790869.0,28422049140.0
+duration,2799.0,2675.0
+fetch wait time,22.0,49625.0
+internal.metrics.executorCpuTime,10344351816975.0,9452832909747.0
+internal.metrics.executorDeserializeCpuTime,148189075775.0,132166171159.0
+internal.metrics.executorDeserializeTime,260448.0,243868.0
+internal.metrics.executorRunTime,12721113.0,66956788.0
+internal.metrics.jvmGCTime,35892.0,11959.0
+internal.metrics.resultSerializationTime,212.0,129.0
+internal.metrics.shuffle.read.fetchWaitTime,22.0,24998.0
+internal.metrics.shuffle.write.writeTime,74483734777.0,76463795254.0
+join time,162837613.0,129176998.0
+scan time,11147133.0,66001424.0
+shuffle write time,74483734777.0,76463795254.0
+sort time,0.0,0.0
+time in batch concat,949918823.0,933430804.0
+time in compute agg,198545030299.0,199325107005.0
+total time,17295772904507.0,102583393301885.0
+write time,22908364288.0,16372185666.0
+internal.metrics.input.bytesRead,1110700645164.0,1110703994403.0
+internal.metrics.output.bytesWritten,1314031616.0,1314052940.0
+internal.metrics.resultSize,21284316.0,21150873.0
+internal.metrics.shuffle.read.localBytesRead,3960364183.0,3963854695.0
+internal.metrics.shuffle.read.remoteBytesRead,91089925132.0,91086779686.0
+internal.metrics.shuffle.read.remoteBytesReadToDisk,0.0,0.0
+internal.metrics.shuffle.write.bytesWritten,47719395106.0,47719575699.0
+local bytes read,5932565177.0,5939579157.0
+peak device memory,2426830813380.0,2426813540956.0
+remote bytes read,136448618347.0,136442113906.0
+shuffle bytes written,47719395106.0,47719575699.0
+internal.metrics.input.recordsRead,4482021742.0,4481413077.0
+internal.metrics.output.recordsWritten,98127336.0,98127336.0
+internal.metrics.shuffle.read.localBlocksFetched,2064.0,2069.0
+internal.metrics.shuffle.read.recordsRead,48992.0,48990.0
+internal.metrics.shuffle.read.remoteBlocksFetched,46928.0,46921.0
+internal.metrics.shuffle.write.recordsWritten,25712.0,25710.0
+join output rows,32709112.0,32709112.0
+local blocks read,3034.0,3040.0
+number of input columnar batches,110154.0,110151.0
+number of input rows,115889353282.0,115889353278.0
+number of output columnar batches,106387.0,106379.0
+number of output rows,456290307837.0,456289699160.0
+records read,72272.0,72270.0
+remote blocks read,69238.0,69230.0
+shuffle records written,25712.0,25710.0
