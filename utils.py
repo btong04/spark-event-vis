@@ -1,9 +1,11 @@
 from collections import namedtuple
 import json
 import pandas as pd
+import os
 from functools import reduce
 import pyspark
 spark = pyspark.sql.SparkSession.builder.getOrCreate()
+
 
 MetricMeta = namedtuple('MetricMeta', 'name kind unit')
 metric_metas = [
@@ -81,6 +83,38 @@ for gid,grp in attr_units_kind:
 time_cols = attr_units[attr_units['kind']=='time']['name'].values
 size_cols = attr_units[attr_units['kind']=='size']['name'].values
 count_cols = attr_units[attr_units['kind']=='count']['name'].values
+
+
+# def melt(df, id_vars=None, value_vars=None, var_name='variable', value_name='value'):
+#     import pyspark.sql.functions as F
+    
+#     if id_vars is None:
+#         id_vars = []
+#     if value_vars is None:
+#         value_vars = [c for c in df.columns if c not in id_vars]
+#     return df.withColumn(
+#         "value_tuple",
+#         F.explode(
+#             F.array(
+#                 *[
+#                     F.struct(
+#                         F.lit(vv).alias(var_name), 
+#                         F.col("`%s`" % vv).alias(value_name)
+#                     ) 
+#                     for vv in value_vars
+#                 ]
+#             )
+#         )
+#     ).select(*(id_vars + [F.col("value_tuple")[cn].alias(cn) for cn in [var_name, value_name]]))
+
+def gen_toc(hist_log_path):
+    """
+    Generates table of content for history log files. Remove everything except for completed app-* files.
+    """
+    files = os.listdir(hist_log_path)
+    toc = pd.DataFrame({'filename': files, 'file_loc': [os.path.join(hist_log_path, fn) for fn in files]})
+    toc = toc[(toc['filename'].str.startswith('app-')) & (~toc['filename'].str.endswith('.inprogress'))]
+    return(toc)
 
 def convert_time_to_seconds(df):
     """

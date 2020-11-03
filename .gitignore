@@ -3,3 +3,4 @@
 .ipynb_checkpoints/
 .private/
 __pycache__/
+spark-logs/
