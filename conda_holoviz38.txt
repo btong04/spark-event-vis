@@ -1,0 +1,14 @@
+# Create venv:
+conda create -n holoviz38 python=3.8
+activate holoviz38
+
+# Install packages:
+conda install -c pyviz holoviz
+conda install -c conda-forge ipykernel jupyterlab nodejs ipywidgets pyspark seaborn umap-learn shap
+pip install sparkmeasure sweetviz
+
+# Register ipykernel:
+ipython kernel install --user --name holoviz38 --display-name "holoviz38"
+
+# Enable jupyter lab extensions:
+jupyter labextension install @pyviz/jupyterlab_pyviz
